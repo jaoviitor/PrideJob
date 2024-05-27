@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap');
+
+        body {
+            background: linear-gradient(to bottom right, #F53B45, #F5BD84, #599E8E, #6C66AD);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            margin-top: 400px;
+            margin-bottom: 100px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-image {
+            flex: 1;
+            background-image: url(src/img/img-login.svg);
+            background-size: cover;
+            background-position: center;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        .card-form {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-form h2 {
+            font-family: 'Geologica', sans-serif;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .card-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-form label {
+            font-family: 'Geologica', sans-serif;
+        }
+
+        .card-form input[type="email"],
+        .card-form input[type="password"],
+        .card-form input[type="text"],
+        .card-form input[type="date"] {
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 16px;
+            background-color: #f5f5f5;
+            outline: none;
+            width: 85%;
+        }
+
+        .card-form input[type="email"]::placeholder,
+        .card-form input[type="password"]::placeholder,
+        .card-form input[type="text"]::placeholder,
+        .card-form input[type="date"]::placeholder {
+            opacity: 0.7;
+        }
+
+        .card-form input[type="email"] {
+            background-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/person-fill.svg");
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            padding-left: 40px;
+            border-radius: 10px;
+        }
+
+        .card-form input[type="password"] {
+            background-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/lock-fill.svg");
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            padding-left: 40px;
+            border-radius: 10px;
+        }
+        .card-form input[type="text"][name=cpf] {
+            background-image: url(src/img/img-register-idCard.svg);
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            padding-left: 40px;
+            border-radius: 10px;
+        }
+        .card-form input[type="text"][name=nome] {
+            background-image: url(src/img/img-register-name.svg);
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            padding-left: 40px;
+            border-radius: 10px;
+        }
+        .card-form input[type="date"][name=data] {
+            padding-left: 40px;
+            border-radius: 10px;
+        }
+        .card-form input[type="date"]::-webkit-calendar-picker-indicator {
+            position: absolute;
+            left: 45px; /* Posiciona o ícone na extrema esquerda */
+            transform: translateY(-5%);
+            width: 25px;
+            height: 25px;
+            opacity: 1; /* Torna o ícone visível */
+        }
+        .card-form input[type="text"][name=tel] {
+            background-image: url(src/img/img-register-phone.svg);
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            padding-left: 40px;
+            border-radius: 10px;
+        }
+        .card-form input[type="text"][name=cep] {
+            background-image: url(src/img/img-register-pin.svg);
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            padding-left: 40px;
+            border-radius: 10px;
+        }
+
+        .login-form button {
+            font-family: 'Geologica', sans-serif;
+            position: relative;
+            display: inline-block;
+            margin: 15px;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: #FF81AE;
+            background: transparent;
+            cursor: pointer;
+            transition: ease-out 0.5s;
+            border: 2px solid #FF81AE;
+            border-radius: 10px;
+            box-shadow: inset 0 0 0 0 #FF81AE;
+            width: 40%;
+            align-self: center;
+        }
+
+        .login-form button:hover {
+            color: white;
+            box-shadow: inset 0 -100px 0 0 #FF81AE;
+        }
+
+        .login-form button:active {
+            transform: scale(0.9);
+        }
+
+        .card-form .reset-password-link,
+        .card-form .create-account-link {
+            font-family: 'Geologica', sans-serif;
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .card-form .reset-password-link a,
+        .card-form .create-account-link a {
+            color: #4a148c;
+            text-decoration: none;
+        }
+
+        .cta {
+            border: none;
+            background: none;
+          }
+
+          .cta span {
+            font-family: 'Geologica', sans-serif;
+            padding-bottom: 7px;
+            font-size: 14px;
+            padding-right: 15px;
+            text-transform: uppercase;
+          }
+          .cta:hover span {
+            color: #FF81AE;
+          }
+
+          .cta svg {
+            transform: translateX(-8px);
+            transition: all 0.3s ease;
+          }
+
+          .cta:hover svg {
+            transform: translateX(0);
+          }
+
+          .cta:active svg {
+            transform: scale(0.9);
+          }
+
+          .hover-underline-animation {
+            position: relative;
+            color: black;
+            padding-bottom: 20px;
+          }
+
+          .hover-underline-animation:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #FF81AE;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+          }
+
+          .cta:hover .hover-underline-animation:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-form">
+                <h2>Cadastro Para Empresas</h2>
+                <form class="login-form">
+                    <label for="cnpj">Nome*</label>
+                    <input type="text" name="nome" placeholder="nome empresa" required>
+
+                    <label for="nome">CNPJ*</label>
+                    <input type="text" name="cnpj" placeholder="999.999.999-9" required>
+
+                    <label for="email">Email*</label>
+                    <input type="email" placeholder="emailempresal@example.com" required>
+
+                    <label for="email">Telefone*</label>
+                    <input type="text" name="tel" placeholder="(XX) 9XXXX-XXXX" required>
+
+                    <label for="email">CEP*</label>
+                    <input type="text" name="cep" placeholder="XXXXX-XXX" required>
+
+                    <label for="email">Senha*</label>
+                    <input type="password" placeholder="Digite sua senha" required>
+
+                    <label for="email">Confirme a senha*</label>
+                    <input type="password" placeholder="Confirme sua senha" required>
+
+                    <button class="login" type="submit">Criar conta</button>
+                </form>
+                <div class="create-account-link">
+                    <span>Já possui conta?</span>
+                    <button class="cta">
+                        <span class="hover-underline-animation" onclick="window.location.href='login.html'"> Faça Login </span>
+                        <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+                            <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="src/js/index.js"></script>
+</body>
+</html>
