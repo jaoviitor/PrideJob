@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Nova+Square&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Baloo+2&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+#cards-section {
+    text-align: center;
+    background: linear-gradient(to bottom, #fff9ea, #ffff, #ffff, #ffff, #ffff);
+    height: 100vh;
+    position: relative;
+  }
+
+.cards-header-text h2 {
+    text-align: center;
+    font-family: "Kanit", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    
+}
+
+.cards-header-text h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: #BA68C8;
+    margin-top: 8px;
+  }
+
+.container {
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+  }
+
+.element {
+    position: absolute;
+    bottom: 1;
+    left: 0;
+}
+
+.element img {
+    width: 310px;
+    height: auto;
+}
+
+.card {
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin: 30px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ffcef0;
+  }
+
+  .card img {
+    width: 80%;
+    height: 60%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .img-card1 {
+    max-width: 200px;
+  }
+
+  .card-text {
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #333;
+    margin: 20px;
+    margin-bottom: 20px;
+    display: grid;
+    place-items: center;
+  }
+  .card-text h2 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .card-text p {
+    text-align: justify;
+  }
+
+  @media screen and (max-width: 1170px) {
+    .container {
+        flex-wrap: wrap;
+      }
+    
+    .card {
+        width: calc(100% - 60px);
+        margin: 15px;
+    }
+  }

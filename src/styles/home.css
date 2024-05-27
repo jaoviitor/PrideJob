@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Nova+Square&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Baloo+2&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+#home{
+    display: flex;
+    min-height: calc(100vh - 152px);
+    position: relative;
+}
+
+#cta {
+    flex: 1;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+#cta .tittle {
+    font-size: 3.2rem;
+    color: #333;
+    font-weight: 700;
+}
+#cta .tittle span {
+    background: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#cta .description {
+    font-size: 1.2rem;
+}
+
+#cta-buttons {
+    display: flex;
+    gap: 24px;
+    font-size: 20px;
+}
+
+#cta-buttons a {
+    text-decoration: none;
+    color: #fff9ea;
+}
+
+#cta-buttons button {
+    font-family: 'Geologica', sans-serif;
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #FF81AE;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #FF81AE;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #FF81AE;
+    width: 60%;
+    align-self: center;
+}
+
+#cta-buttons button:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #FF81AE;
+}
+
+#cta-buttons button:active {
+    transform: scale(0.9);
+}
+
+#banner {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+#banner img {
+    max-width: 90%;
+    height: auto;
+    align-self: flex-start;
+}
+
+@media screen and (max-width: 1170px) {
+    #home {
+        min-height: 100%;
+        padding-top: 0px;
+    }
+
+    #banner,
+    #banner img {
+        display: none;
+    }
+
+    #cta {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+}
