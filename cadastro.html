@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap');
 
@@ -106,14 +106,14 @@
             padding-left: 40px;
             border-radius: 10px;
         }
-        .card-form input[type="text"][name=nome] {
+        .card-form input[type="text"] {
             background-image: url(src/img/img-register-name.svg);
             background-repeat: no-repeat;
             background-position: 10px center;
             padding-left: 40px;
             border-radius: 10px;
         }
-        .card-form input[type="date"][name=data] {
+        .card-form input[type="date"][name=dataNascimento] {
             padding-left: 40px;
             border-radius: 10px;
         }
@@ -125,7 +125,7 @@
             height: 25px;
             opacity: 1; /* Torna o ícone visível */
         }
-        .card-form input[type="text"][name=tel] {
+        .card-form input[type="text"][name=telefone] {
             background-image: url(src/img/img-register-phone.svg);
             background-repeat: no-repeat;
             background-position: 10px center;
@@ -235,6 +235,109 @@
             transform: scaleX(1);
             transform-origin: bottom left;
           }
+
+          .modal {
+            display: none; /* Ocultar por padrão */
+            position: fixed; /* Fixar na tela */
+            z-index: 1; /* Posição sobre todos os outros elementos */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Habilitar rolagem */
+            background-color: rgba(0,0,0,0.4); /* Fundo escuro semi-transparente */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .loader {
+            display: none;
+            --dim: 3rem;
+            width: var(--dim);
+            height: var(--dim);
+            position: relative;
+            animation: spin988 2s linear infinite;
+            position: fixed;
+            top: 50%; /* Posicionamento vertical no meio da tela */
+            left: 50%;
+            z-index: 9999;
+          }
+          
+          .loader .circle {
+            --color: #333;
+            --dim: 1.2rem;
+            width: var(--dim);
+            height: var(--dim);
+            background-color: var(--color);
+            border-radius: 50%;
+            position: absolute;
+          }
+          
+          .loader .circle:nth-child(1) {
+            top: 0;
+            left: 0;
+          }
+          
+          .loader .circle:nth-child(2) {
+            top: 0;
+            right: 0;
+          }
+          
+          .loader .circle:nth-child(3) {
+            bottom: 0;
+            left: 0;
+          }
+          
+          .loader .circle:nth-child(4) {
+            bottom: 0;
+            right: 0;
+          }
+          
+          @keyframes spin988 {
+            0% {
+              transform: scale(1) rotate(0);
+            }
+          
+            20%, 25% {
+              transform: scale(1.3) rotate(90deg);
+            }
+          
+            45%, 50% {
+              transform: scale(1) rotate(180deg);
+            }
+          
+            70%, 75% {
+              transform: scale(1.3) rotate(270deg);
+            }
+          
+            95%, 100% {
+              transform: scale(1) rotate(360deg);
+            }
+          }
+        
     </style>
 </head>
 <body>
@@ -244,31 +347,31 @@
                 <h2>Cadastro</h2>
                 <form class="login-form">
                     <label for="cpf">CPF*</label>
-                    <input type="text" name="cpf" placeholder="999.999.999-99" required>
+                    <input type="text" name="cpf" id="cpf" placeholder="999.999.999-99" required>
 
                     <label for="nome">Nome completo*</label>
-                    <input type="text" name="nome" placeholder="Seu nome completo" required>
+                    <input type="text" name="nome" id="nome" placeholder="Seu nome completo" required>
 
-                    <label for="email">Nome social</label>
-                    <input type="text" name="nome" placeholder="Seu nome social (opcional)">
+                    <label for="nomeSocial">Nome social</label>
+                    <input type="text" name="nomeSocial" id="nomeSocial" placeholder="Seu nome social (opcional)">
 
-                    <label for="email">Data de nascimento*</label>
-                    <input type="date" id="data" name="data" placeholder="Data de nascimento: DD/MM/AAAA" required>
+                    <label for="dataNascimento">Data de nascimento*</label>
+                    <input type="date" id="dataNascimento" name="dataNascimento" placeholder="Data de nascimento: DD/MM/AAAA" required>
 
                     <label for="email">Email*</label>
-                    <input type="email" placeholder="seuemail@example.com" required>
+                    <input type="email" name="email" id="email" placeholder="seuemail@example.com" required>
 
-                    <label for="email">Telefone*</label>
-                    <input type="text" name="tel" placeholder="(XX) 9XXXX-XXXX" required>
+                    <label for="telefone">Telefone*</label>
+                    <input type="text" name="telefone" id="telefone" placeholder="(XX) 9XXXX-XXXX" required>
 
-                    <label for="email">CEP*</label>
-                    <input type="text" name="cep" placeholder="XXXXX-XXX" required>
+                    <label for="cep">CEP*</label>
+                    <input type="text" name="cep" id="cep" placeholder="XXXXX-XXX" required>
 
-                    <label for="email">Senha*</label>
-                    <input type="password" placeholder="Digite sua senha" required>
+                    <label for="senha">Senha*</label>
+                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
 
-                    <label for="email">Confirme a senha*</label>
-                    <input type="password" placeholder="Confirme sua senha" required>
+                    <label for="confirmSenha">Confirme a senha*</label>
+                    <input type="password" id="confirmSenha" placeholder="Confirme sua senha" required>
 
                     <button class="login" type="submit">Criar conta</button>
                 </form>
@@ -283,6 +386,19 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+                <h2>Cadastro realizado com sucesso!</h2>
+                <p>Enviamos um email para você.</p>
+        </div>
+    </div>
+    <div id="loader" class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
     </div>
     <script src="src/js/register.js"></script>
 </body>
