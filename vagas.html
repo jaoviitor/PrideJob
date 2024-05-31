@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pride Job Connect - Vagas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/styles/vagas.css"> <!-- Inclua o caminho para o seu arquivo CSS -->
+    <link rel="stylesheet" href="src/styles/style.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <img src="src/img/logo-pride-job.svg" class="nav-logo">
+
+            <ul id="nav-list">
+                <li class="nav-item">
+                    <a href="vagas.html">Vagas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="redirect.html">Cursos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="redirect.html">Serviços</a>
+                </li>
+            </ul>
+
+            <button class="btn-default" onclick="window.location.href='login.html'">
+                <i class="fa-solid fa-user"> <a> Login</a></i>
+            </button>
+            <button id="mobile-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile-menu">
+            <ul id="mobile-nav-list">
+                <li class="nav-item">
+                    <a href="vagas.html">Vagas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="redirect.html">Cursos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="redirect.html">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <button id="mobile-login-btn" class="btn-default" onclick="window.location.href='login.html'"><i class="fa-solid fa-user"> <a id="a-login"> Login</a></i></button>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+    <main>
+        <section id="search-section">
+            <input type="text" placeholder="Qual vaga você busca?">
+        </section>
+        <section id="cards-section">
+            <div class="container" id="cards-container">
+                <!-- Os cards serão inseridos dinamicamente aqui -->
+            </div>
+        </section>
+    </main>
+    <script src="src/js/vagas.js"></script>
+</body>
+</html>

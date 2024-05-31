@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
 
         try {
-            const response = await fetch('http://localhost:8090/api/usuario', {
+            const response = await fetch('https://pridejob-api.onrender.com/api/usuario', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

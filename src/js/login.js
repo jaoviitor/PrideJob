@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            const response = await fetch('http://localhost:8090/api/usuario/login', {
+            const response = await fetch('https://pridejob-api.onrender.com/api/usuario/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const data = await response.json();
             console.log('Login bem-sucedido:', data);
+            localStorage.setItem('token', data.jwt);
             const mockSessionToken = data.jwt;
             const mockUsername = data.nome;
             showModal(mockSessionToken, mockUsername);
