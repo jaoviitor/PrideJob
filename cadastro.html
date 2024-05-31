@@ -346,8 +346,8 @@
             <div class="card-form">
                 <h2>Cadastro</h2>
                 <form class="login-form">
-                    <label for="cpf">CPF*</label>
-                    <input type="text" name="cpf" id="cpf" placeholder="999.999.999-99" required>
+                    <label for="cpf">CPF (somente digitos)*</label>
+                    <input type="text" name="cpf" id="cpf" placeholder="999.999.999-99" maxlength="14" required>
 
                     <label for="nome">Nome completo*</label>
                     <input type="text" name="nome" id="nome" placeholder="Seu nome completo" required>
@@ -361,11 +361,11 @@
                     <label for="email">Email*</label>
                     <input type="email" name="email" id="email" placeholder="seuemail@example.com" required>
 
-                    <label for="telefone">Telefone*</label>
-                    <input type="text" name="telefone" id="telefone" placeholder="(XX) 9XXXX-XXXX" required>
+                    <label for="telefone">Telefone (somente digitos)*</label>
+                    <input type="text" name="telefone" id="telefone" placeholder="(XX) 9XXXX-XXXX" maxlength="11" required>
 
-                    <label for="cep">CEP*</label>
-                    <input type="text" name="cep" id="cep" placeholder="XXXXX-XXX" required>
+                    <label for="cep">CEP (somente digitos)*</label>
+                    <input type="text" name="cep" id="cep" placeholder="XXXXX-XXX" maxlength="8" required>
 
                     <label for="senha">Senha*</label>
                     <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
